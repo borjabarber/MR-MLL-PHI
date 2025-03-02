@@ -26,6 +26,7 @@ A nivel técnico, he creado una API con FastAPI en la que he integrado un modelo
 │── 📄 docker-compose.yml  
 │── 📄 main.py  
 │── 📄 requirements.txt  
+│── 📄 test.py  
   
 # Comando de arranque:
 Introducir en consola:
