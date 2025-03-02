@@ -13,20 +13,22 @@ Todos necesitamos un camarero virtual al que contarle nuestras cosas, yo simplem
    ```bash
    pip install -r requirements.txt
 
-## Indice del repositorio
+## Indice del repositorio  
 📂 img (Todas las imagenes para el proyecto)  
-📂 templates (Codigo HTML para el front-end en el endpoint (/chat)) 
-│── 📄 .dockerignore
-│── 📄 .gitignore
-│── 📄 .dockerfile
-│── 📄 LICENSE
-│── 📄 Prompts.txt
-│── 📄 README.md
-│── 📄 docker-compose.yml
-│── 📄 main.py
-│── 📄 requirements.txt
+📂 templates (Codigo HTML para el front-end en el endpoint (/chat))   
+│── 📄 .dockerignore    
+│── 📄 .gitignore  
+│── 📄 .dockerfile  
+│── 📄 LICENSE  
+│── 📄 Prompts.txt  
+│── 📄 README.md  
+│── 📄 docker-compose.yml  
+│── 📄 main.py  
+│── 📄 requirements.txt  
+  
 
-3. Para usar main:
+# Comando de arranque:
+Introducir en consola:
    ```bash
    uvicorn main:app 
    
