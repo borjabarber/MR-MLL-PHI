@@ -26,12 +26,14 @@ Todos necesitamos un camarero virtual al que contarle nuestras cosas, yo simplem
 │── 📄 main.py  
 │── 📄 requirements.txt  
   
-
 # Comando de arranque:
 Introducir en consola:
    ```bash
-   uvicorn main:app 
-   
+   uvicorn main:app
+```
+
+----
+
 ## Gracias
 
 MIT License
