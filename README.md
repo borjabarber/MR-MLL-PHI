@@ -2,7 +2,7 @@
 
 # MR-MLL-PHI    
 Siempre he soñado con tener mi propio camarero virtual y hoy me he lanzado a crear uno, un asistente chatbot que te consuela emocionalmente, te cuenta historias sobre su taberna virtual y además te da las mejores recetas de cocteles.  
-Todo un lujo.
+A nivel técnico, he creado una API con FastAPI en la que he integrado un modelo gratuito de Hugging Face, el cual cada vez que un usuario se conecta para interactuar con él, registra en una base de datos alojada en AWS (el servicio en la nube de Amazon) cada pregunta y respuesta.
 
 ## Instalación
 
