@@ -1,7 +1,8 @@
 ![imagen](./img/futuristic-new-year-s-eve-celebration.jpg)
 
 # MR-MLL-PHI    
-siempre he soñado con tener mi propio camarero virtual y hoy me he lanzado a crear uno, un asistente chatbot que te consuela emocionalmente,te cuenta historias y te da las mejores recetas de las bebidas espirituosas que mejor te vienen en cada momento.    
+siempre he soñado con tener mi propio camarero virtual y hoy me he lanzado a crear uno, un asistente chatbot que te consuela emocionalmente, te cuenta historias sobre su taberna virtual y además te da las mejores recetas de cocteles.  
+Todo un lujo.
 
 ## Instalación
 
