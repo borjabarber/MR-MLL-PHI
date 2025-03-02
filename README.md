@@ -1,35 +1,55 @@
+![imagen](./img/futuristic-new-year-s-eve-celebration.jpg)
+
 # MR-MLL-PHI
 Todos necesitamos un camarero virtual al que contarle nuestras cosas, yo simplemente lo he creado. 
-MR-MLL-PHI
-Descripción:
 
-Todos necesitamos un camarero virtual al que contarle nuestras cosas. Este proyecto es una creación para cumplir con esa necesidad, un asistente virtual que escucha y responde.
+## Instalación
 
-Instalación
-Clona este repositorio:
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/borjabarber/MR-MLL-PHI.git
+   
+2. Instala las dependencias:
+   ```bash
+   pip install -r requirements.txt
 
-bash
-Copiar
-Editar
-git clone https://github.com/borjabarber/MR-MLL-PHI.git
-Instala las dependencias:
+## Indice del repositorio
+📂 img (Todas las imagenes para el proyecto)  
+📂 templates (Codigo HTML para el front-end en el endpoint (/chat)) 
+│── 📄 .dockerignore
+│── 📄 .gitignore
+│── 📄 .dockerfile
+│── 📄 LICENSE
+│── 📄 Prompts.txt
+│── 📄 README.md
+│── 📄 docker-compose.yml
+│── 📄 main.py
+│── 📄 requirements.txt
 
-bash
-Copiar
-Editar
-pip install -r requirements.txt
-Configura los parámetros necesarios en el archivo config.py.
+3. Para usar main:
+   ```bash
+   uvicorn main:app 
+   
+## Gracias
 
-Corre el proyecto:
+MIT License
 
-bash
-Copiar
-Editar
-python main.py
-Estructura del Proyecto
-main.py: Archivo principal para ejecutar el proyecto.
-docker-compose.yml: Configuración para levantar los contenedores Docker.
-Dockerfile: Definición del entorno Docker.
-requirements.txt: Dependencias necesarias para el proyecto.
-Licencia
-Este proyecto está licenciado bajo la licencia MIT.
+Copyright (c) 2025 Borja Barber
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
