@@ -17,6 +17,7 @@ A nivel técnico, he creado una API con FastAPI en la que he integrado un modelo
 ## Indice del repositorio  
 📂 img (Todas las imagenes para el proyecto)  
 📂 templates (Codigo HTML para el front-end en el endpoint (/chat))   
+📂 presentacion (Presentaciones de proyecto)    
 │── 📄 .dockerignore    
 │── 📄 .gitignore  
 │── 📄 .dockerfile  
@@ -31,7 +32,7 @@ A nivel técnico, he creado una API con FastAPI en la que he integrado un modelo
 # Comando de arranque:
 Introducir en consola:
    ```bash
-   uvicorn main:app
+   uvicorn main:app --reload
 ```
 
 >[!NOTE]
