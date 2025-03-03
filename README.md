@@ -36,7 +36,7 @@ Introducir en consola:
 ```
 
 >[!NOTE]
-Para usar el codigo se necesita una APIKEY de Hugginface.
+Para usar el codigo se necesita una APIKEY de huggingface.
 
 ----
 
