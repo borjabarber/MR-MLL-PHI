@@ -34,6 +34,9 @@ Introducir en consola:
    uvicorn main:app
 ```
 
+>[!NOTE]
+Para usar el codigo se necesita una APIKEY de Hugginface.
+
 ----
 
 ## Gracias
