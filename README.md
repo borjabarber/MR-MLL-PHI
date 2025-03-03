@@ -32,7 +32,7 @@ A nivel técnico, he creado una API con FastAPI en la que he integrado un modelo
 # Comando de arranque:
 Introducir en consola:
    ```bash
-   uvicorn main:app
+   uvicorn main:app --reload
 ```
 
 >[!NOTE]
