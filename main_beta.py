@@ -1,11 +1,19 @@
-import os
-import pymysql
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from huggingface_hub import InferenceClient
+import pymysql
+import os
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from dotenv import load_dotenv
+
+# Cargar variables de entorno
+load_dotenv()
 
 app = FastAPI()
+
+# Configurar archivos estáticos y templates
+app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 # Configuración de la base de datos usando variables de entorno
@@ -23,14 +31,14 @@ try:
         port=DB_PORT,
         cursorclass=pymysql.cursors.DictCursor,
     )
-
+    
     db.autocommit(True)
     cursor = db.cursor()
     print("Conectado al servidor MySQL correctamente.")
-
+    
     cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}")
     cursor.execute(f"USE {DB_NAME}")
-
+    
     cursor.execute(""" 
         CREATE TABLE IF NOT EXISTS chats (
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -40,7 +48,7 @@ try:
         )
     """)
     print("Tabla 'chats' verificada/creada.")
-
+    
 except pymysql.MySQLError as e:
     print(f"Error al conectar al servidor MySQL: {e}")
     raise e
@@ -63,40 +71,26 @@ async def chat_page(request: Request):
 
 @app.post("/chat")
 def chat_endpoint(request: ChatRequest):
-    messages = [
-        {
-            "role": "system",
-            "content": (
-                "Eres un camarero simpático, bromista y algo sarcástico, "
-                "que trabaja en una cibertaberna virtual. "
-                "Siempre hablas con un tono amistoso y haces referencias al mundos fantásticos. "
-                "Tu nombre es Phi y siempre estás dispuesto a escuchar historias."
-            )
-        },
-        {
-            "role": request.role,
-            "content": request.content
-        }
-    ]
-
+    messages = [{"role": request.role, "content": request.content}]
+    
     try:
         completion = client.chat.completions.create(
             model="microsoft/Phi-3.5-mini-instruct",
             messages=messages,
             max_tokens=1000
         )
-
+        
         response = completion.choices[0].message.content
-
+        
         cursor = db.cursor()
         cursor.execute("""
             INSERT INTO chats (role, content, response) 
             VALUES (%s, %s, %s)
         """, (request.role, request.content, response))
-
+        
         db.commit()
-
+        
         return {"response": response}
-
+    
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
